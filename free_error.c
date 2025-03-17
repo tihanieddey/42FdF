@@ -6,7 +6,7 @@
 /*   By: nmohd-ed <nurhidayahtihani@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:44:32 by nmohd-ed          #+#    #+#             */
-/*   Updated: 2025/03/03 13:36:42 by nmohd-ed         ###   ########.fr       */
+/*   Updated: 2025/03/17 11:06:43 by nmohd-ed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	free_argument(char **array_string)
 	free(array_string);
 }
 
-void	handle_split_error(char *line, char **split, t_map *map)
+void	handle_split_error(char *line, char **split, t_data *map)
 {
 	free(line);
 	free_argument(split);
@@ -41,7 +41,7 @@ void	handle_split_error(char *line, char **split, t_map *map)
 	error_exit("Split failed");
 }
 
-void	free_map(t_map *map)
+void	free_map(t_data *map)
 {
 	int		i;
 

@@ -6,7 +6,7 @@
 #    By: nmohd-ed <nurhidayahtihani@gmail.com>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/26 10:33:51 by nmohd-ed          #+#    #+#              #
-#    Updated: 2025/03/04 14:23:54 by nmohd-ed         ###   ########.fr        #
+#    Updated: 2025/03/17 14:15:09 by nmohd-ed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIBFT_DIR = lib/libft
 LIBFT = -L $(LIBFT_DIR) -lft
 MLX = -L $(MLX_DIR) -lmlx -lXext -lX11 -lm -lz
 
-SRC = main.c map.c free_error.c map_utils.c draw.c
+SRC = main.c map.c free_error.c map_utils.c draw.c draw_utils.c
 
 OBJ = $(SRC:.c=.o)
 

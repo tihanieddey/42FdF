@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_file.c                                        :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmohd-ed <nurhidayahtihani@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 13:16:59 by nmohd-ed          #+#    #+#             */
-/*   Updated: 2025/03/03 14:37:11 by nmohd-ed         ###   ########.fr       */
+/*   Updated: 2025/03/17 11:05:53 by nmohd-ed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fdf.h"
 #include <stdio.h>
 
-t_map	*init_map(char *file_name)
+t_data	*init_map(char *file_name)
 {
 	int		fd;
-	t_map	*map;
+	t_data	*map;
 
 	fd = open(file_name, O_RDONLY);
 	if (fd < 0)
 		error_exit("Cannot open file");
-	map = (t_map *)ft_calloc(1, sizeof(t_map));
+	map = (t_data *)ft_calloc(1, sizeof(t_data));
 	if (!map)
 		error_exit("Map allocation failed");
 	get_map_dimensions(fd, map);
@@ -34,7 +34,7 @@ t_map	*init_map(char *file_name)
 	return (map);
 }
 
-void	process_line(char *line, t_map *map)
+void	process_line(char *line, t_data *map)
 {
 	char	**split;
 	int		i;
@@ -54,7 +54,7 @@ void	process_line(char *line, t_map *map)
 	free_argument(split);
 }
 
-void	get_map_dimensions(int fd, t_map *map)
+void	get_map_dimensions(int fd, t_data *map)
 {
 	char	*line;
 	
@@ -70,7 +70,7 @@ void	get_map_dimensions(int fd, t_map *map)
 		error_exit("Empty file or invalid map dimensions");
 }
 
-void	pars_val_map(int fd, t_map *map)
+void	pars_val_map(int fd, t_data *map)
 {
 	int		y;
 	char	*line;

@@ -6,7 +6,7 @@
 /*   By: nmohd-ed <nurhidayahtihani@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 09:55:33 by nmohd-ed          #+#    #+#             */
-/*   Updated: 2025/03/14 14:13:02 by nmohd-ed         ###   ########.fr       */
+/*   Updated: 2025/03/17 11:07:03 by nmohd-ed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	validate_arguments(int argc, char *argv[])
 		error_exit("Invalid file format");
 }
 
-void	parse_line(char *line, t_map *map, int y)
+void	parse_line(char *line, t_data *map, int y)
 {
 	char	**split;
 	int		x;
@@ -43,7 +43,7 @@ void	parse_line(char *line, t_map *map, int y)
 	free(line);
 }
 
-void	map_mem_alloc(t_map *map)
+void	map_mem_alloc(t_data *map)
 {
 	int	i;
 
